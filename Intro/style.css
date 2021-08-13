@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=WindSong&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'WindSong', cursive; /* phong chu cho doan van */
+    display: flex;  /*flex box*/
+    flex-direction: column;  /* xac dinh chieu cua flex item */
+    align-items: center; /* căn giữa các item trong container */
+    justify-content: center; /* căn đều các item trong container */
+    height: 100vh;
+    overflow: hidden; /* quy định neu noi dung tràn hộp */
+    margin: 0px;
+}

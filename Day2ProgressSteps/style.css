@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+:root {
+    --line-border-fill: #3498db;
+    --line-border-empty: #e0e0e0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f6f7fb;
+    font-family: 'Muli', sans-serif; /* phong chu cho doan van */
+    display: flex;  /*flex box*/
+    
+    align-items: center; /* căn giữa các item trong container */
+    justify-content: center; /* căn đều các item trong container */
+    height: 100vh;
+    overflow: hidden; /* quy định neu noi dung tràn hộp */
+    margin: 0px;
+}
+
+.container {
+    text-align: center;
+}
+
+.progress-container {
+    display: flex; 
+    justify-content: space-between; /* can chinh cac item  */
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 350px;
+}
+
+.progress-container::before { /* thanh progress mau xam */
+    content: '';
+    background-color: var(--line-border-empty);
+    position: absolute; /* xet thuoc tinh ko bi phu thuoc lop cha  */
+    /* left: 0; */
+
+    top: 50%; /* 2 cai nay de căn thanh progress center */
+    transform: translateY(-50%);
+
+    height: 4px;
+    width: 100%;
+    z-index: -1; /* xet cho thanh progress xanh đè lên progress xam */
+}
+
+.progress { /* thanh progress mau xanh de len mau xam */
+    background-color: var(--line-border-fill);
+    position: absolute;
+    left: 0;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    height: 4px;
+    width: 0%;
+    z-index: -1;
+    transition: 0.4s ease; /* hieu ung chuyen tiep */
+}
+
+.circle {
+    background-color: #fff;
+    color: #999;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid var(--line-border-empty); /* độ dày / kiểu border / màu */
+    transition: 0.4s ease; 
+}
+
+.circle.active{
+    border-color: var(--line-border-fill);
+}
+
+.btn {
+    background-color: var(--line-border-fill);
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 8px 30px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+.btn:active {
+    transform: scale(0.95); /* khi button active thi bị thay dôi nho hon */
+}
+
+
+.btn:focus { /* khi duoc chọn */
+    outline: 0; /* vien ngoai cung cua 1 block sau margin */
+}
+
+.btn:disabled { /* khi button bị vo hiêu hoa disabled */
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
+}

@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli', sans-serif; /* phong chu cho doan van */
+    display: flex;  /*flex box*/
+    
+    align-items: center; /* căn giữa các item trong container */
+    justify-content: center; /* căn đều các item trong container */
+    height: 100vh;
+    overflow: hidden; /* quy định neu noi dung tràn hộp */
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 98vw; /* ti le 1/100 so voi do dai phan tu cha chua gan nhat */
+}
+
+.panel {
+    background-size: auto 100%; /* kich thuoc hinh nen bang tu dong hoac px , x tu dong y 100% */
+    background-position: center; /* thiet lap vi tri bat dau cua hinh nen, mac dinh la goc tren cung ben trai */
+    background-repeat: no-repeat; /* thiet lap che do lap lai hinh nen, mac dinh no se lap lai  */
+    height: 80vh;
+    border-radius: 50px; /* ban kinh goc tron */
+    color: #fff;
+
+    
+    flex: 0.5;
+    margin: 10px;
+    position: relative; /* de xet thuoc tinh cho element dang xet, ko phu thuoc lop cha */
+    transition: flex 0.7s ease-in; /* thay doi cac thuoc tinh trong khoang thoi gian nhat dinh */
+    
+    cursor: pointer; /* quy dinh kieu con tro chuot se hien thi khi chi tren 1 phan tu */
+}
+
+.panel h3 {
+    font-size: 18px;
+    position: absolute; /* de chinh sua thuoc tinh con trong thuoc tinh cha ( co positon ) ma ko phu thuoc */
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0; /* độ mờ 1 la mac dinh*/
+}
+
+.panel.active {
+    flex: 5;    
+}
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;                                                                                                                                                                                                                                                                   
+}
+
+@media (max-width: 480px) { /* responsive thay doi thuoc tinh khi browser thu nho xuong nho hon 480px */
+    .container {
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4), /* xet thuoc tinh cho the panel thu 4 */
+    .panel:nth-of-type(5) { /* xet thuoc tinh cho the panel thu 5 */
+        display: none;
+    }
+}
