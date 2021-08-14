@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif; /* phong chu cho doan van */
+    display: flex;  /*flex box*/
+    align-items: center; /* căn giữa các item trong container */
+    justify-content: center; /* căn đều các item trong container */
+    height: 100vh;
+    overflow: hidden; /* quy định neu noi dung tràn hộp */
+    margin: 0px;
+}
+
+.bg {
+    background: url('https://i.pinimg.com/564x/b4/77/29/b4772901018f57dbd8f9d316f624c5fc.jpg');
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: calc(100vw + 60px);
+    height: calc(100vh + 60px);
+    z-index: -1; /* thu tu hien thi cac stack */
+    /* filter: blur(100px);  xac dinh hieu ung img, mờ và độ bão hòa, blur xac dinh do mờ cua img */
+    
+}
+
+.loading-text {
+    font-size: 50px;
+    color: #fff;
+}
