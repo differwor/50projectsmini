@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* phong chu cho doan van */
+    display: flex;  /*flex box*/
+    flex-direction: column;  /* xac dinh chieu cua flex item */
+    align-items: center; /* căn giữa các item trong container */
+    justify-content: center; /* căn đều các item trong container */
+
+    overflow-x: hidden; /* ẩn thanh cuon ngang*/
+}
+
+h1 {
+    margin: 10px;
+}
+
+.box {
+    background-color: steelblue;
+    color: pink;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 700px;
+    height: 600px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+    transform: translateX(200%);
+    transition: transform 5s ease;
+}
+
+.box:nth-last-of-type(even) { /* css cho cac phan tu box chẵn */
+    transform: translateX(-200%);
+}
+
+.box.show {
+    transform: translateX(0);
+}
+
+
